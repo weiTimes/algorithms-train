@@ -2,8 +2,9 @@
  * @Author: yewei
  * @Date: 2020-10-28 14:36:06
  * @Last Modified by: yewei
- * @Last Modified time: 2020-10-28 14:36:56
+ * @Last Modified time: 2020-11-21 11:31:33
  *
+ *  +1
  *  +1
  *  +1
  *  +1
@@ -30,14 +31,18 @@ var maxArea = function (height) {
 // 解法二
 // 双指针：两个指针分别指向头和尾，哪个小移动哪个，内敛
 var maxArea = function (height) {
-  var i = 0;
-  var j = height.length - 1;
   var max = 0;
-  while (i < j) {
+  var first = 0;
+  var last = height.length - 1;
+
+  // 当两个指针重合时退出循环
+  while (first < last) {
     max = Math.max(
       max,
-      (j - i) * (height[i] > height[j] ? height[j--] : height[i++])
-    );
+      (last - first) *
+        (height[first] > height[last] ? height[last--] : height[first++])
+    ); // 用完之后值小的那个移动指针
   }
+
   return max;
 };
