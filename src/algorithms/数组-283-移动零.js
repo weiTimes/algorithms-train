@@ -2,9 +2,8 @@
  * @Author: yewei
  * @Date: 2020-10-28 14:36:34
  * @Last Modified by: yewei
- * @Last Modified time: 2020-11-21 15:28:33
+ * @Last Modified time: 2020-11-21 15:35:19
  *
- *  +1
  *  +1
  *  +1
  *  +1
@@ -34,7 +33,26 @@ var moveZeroes = function (nums) {
 };
 
 /**
- *  2 一层遍历
+ *  2.1 一次遍历
+ *  时间最快
+ * @param {*} nums
+ */
+var moveZeroes = function (nums) {
+  var j = 0;
+
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[j] = nums[i];
+      if (i !== j) {
+        nums[i] = 0;
+      }
+      j++;
+    }
+  }
+};
+
+/**
+ *  2.2 一层遍历
  *  使用0作为中间点，左边的是不为0的数，右边的是为0的数
  * @param {*} nums
  */

@@ -1,0 +1,14 @@
+{
+  "name": "algorithms-train",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/weiTimes/algorithms-train.git",
+  "author": "yewei <1156385527@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "jest": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
