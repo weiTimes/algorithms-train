@@ -1,20 +1,24 @@
-function apiToRenderDom(apis) {
-  apis.forEach(function (api) {
-    setTimeout(() => {
-      get(api).then((res) => {
-        render(res);
-      });
-    }, 0);
-  });
-}
+var groupAnagrams = function (strs) {
+  var hashTable = new Map();
+  var result = [];
 
-function get(id) {
-  return new Promise((resolve, reject) => {
-    resolve(id);
-  });
-}
-function render(id) {
-  console.log(`渲染dom-${id}`);
-}
+  for (var i = 0; i < strs.length; i++) {
+    var str = [...strs[i]].sort().join('');
+    if (hashTable.has(str)) {
+      hashTable.get(str).push(strs[i]);
+    } else {
+      hashTable.set(str, [strs[i]]);
+    }
+  }
 
-apiToRenderDom(['api1', 'api2', 'api3']);
+  for (const item of hashTable.values()) {
+    if (item.length > 0) {
+      result.push(item);
+    }
+  }
+
+  return result;
+};
+
+const result = groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
+console.log(result);
