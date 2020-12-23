@@ -15,3 +15,21 @@
 * 需要不断地回顾、编写，最好采用五遍刷题法，即刷五遍，多看多做
 * 误区：刷题只刷一遍
 * 核心思想：升维，空间换时间 
+
+## 学习资源
+
+* [visualgo](https://visualgo.net/zh)
+
+数据结构和算法动态可视化，可以说是一个神器了，请看效果图
+
+![效果图](https://tva1.sinaimg.cn/large/0081Kckwly1glxmk4ihgeg30xc0rmnpm.gif)
+
+* LeetCode(Vscode插件)
+
+可以在Vscode中刷题，特别方便
+
+* Debug Visualizer(Vscode插件)
+
+允许你可视化Debug，非常惊艳，Vscode的一个神级插件
+
+![可视化debug](https://tva1.sinaimg.cn/large/0081Kckwly1glxmr19xljj30hr0ar75o.jpg)
