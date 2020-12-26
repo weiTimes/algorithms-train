@@ -1,24 +1,39 @@
-var groupAnagrams = function (strs) {
-  var hashTable = new Map();
-  var result = [];
+var inorderTraversal = function (root) {
+  if (!root) return [];
 
-  for (var i = 0; i < strs.length; i++) {
-    var str = [...strs[i]].sort().join('');
-    if (hashTable.has(str)) {
-      hashTable.get(str).push(strs[i]);
-    } else {
-      hashTable.set(str, [strs[i]]);
-    }
+  const res = [];
+
+  function inorder(treeNode) {
+    if (!treeNode) return;
+
+    inorder(treeNode.left);
+    res.push(treeNode.val);
+    inorder(treeNode.right);
   }
 
-  for (const item of hashTable.values()) {
-    if (item.length > 0) {
-      result.push(item);
-    }
-  }
+  inorder(root);
 
-  return result;
+  return res;
 };
 
-const result = groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
+const tree = {
+  left: null,
+  right: {
+    left: {
+      left: null,
+      val: 8,
+      right: null,
+    },
+    right: {
+      left: null,
+      val: 10,
+      right: null,
+    },
+    val: 3,
+  },
+  val: 1,
+};
+
+const result = inorderTraversal(tree);
+
 console.log(result);
