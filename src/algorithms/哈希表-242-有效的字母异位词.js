@@ -29,7 +29,7 @@ var isAnagram = function (s, t) {
   }
 
   for (var j = 0; j < hashTable.length; j++) {
-    if (hashTable[j] < 0) {
+    if (hashTable[j] !== 0) {
       return false;
     }
   }
